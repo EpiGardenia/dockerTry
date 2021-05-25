@@ -1,0 +1,14 @@
+version: "3.7"
+services:  
+  python:
+    container_name: python
+    image: epigardenia/python:1.0.0
+    build: ./python
+  java:
+    container_name: Java
+    image: epigardenia/java:1.0.0
+    build: ./java
+  swift:
+    container_name: swift
+    image: epigardenia/swift:1.0.0
+    build: ./swift
