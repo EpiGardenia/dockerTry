@@ -1,3 +1,0 @@
-FROM swift:5.4.0-slim
-CMD swift package clean
-CMD swift run

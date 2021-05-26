@@ -1,4 +1,4 @@
-# Step 1
+# Part 1
 
 ## Add dockerfile
 Image support for each language is available in dockerhub
@@ -18,7 +18,7 @@ This will build everything defined in docker-compose.yaml
 
 
 
-# Step 2
+# Part 2
 ## docker run config
 Instead of directly running below command, docker-compose configure it seperately.
 `docker run -it -v ${PWD}:/work -w /work -p 5003:5000 epigardenia/python:1.0.0 /bin/sh`
@@ -53,6 +53,20 @@ c9d607556a13   epigardenia/python:1.0.0           "/bin/sh"                About
 ## run app from container
 `docker exec -it python sh`
 /work #
+
+
+
+# Part3
+
+## Divide into stage 
+
+we can make make stage image of some layers, to reuse in a later stage.
+For example, if we need dev (debug) and prod (release) two images.
+Without build from the beginning twice, we can build common layes  then use
+
+`COPY --from=dev /<commonImageFolder>/ /<newImageFolder>``
+to save some work.
+
 
 
 # Credit

@@ -4,10 +4,11 @@ services:
     container_name: python
     image: epigardenia/python:1.0.0
     build: ./Python
-    working_dir: /work
-    entrypoint: /bin/sh
-    stdin_open: true
-    tty: true
+    target: prod
+    #working_dir: /work      #comment out for build.target:prod
+    #entrypoint: /bin/sh     #comment out for build.target:prod
+    #stdin_open: true        #comment out for build.target:prod
+    #tty: true               #comment out for build.target:prod
     volumes:
     - ./Python/src/:/work
     ports:
