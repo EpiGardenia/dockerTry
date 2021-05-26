@@ -1,14 +1,32 @@
 version: "3.7"
 services:  
-  python:
+  python: #docker run -it -v ${PWD}:/work -w /work -p 5003:5000 epigardenia/python:1.0.0 /bin/sh
     container_name: python
     image: epigardenia/python:1.0.0
-    build: ./python
+    build: ./Python
+    working_dir: /work
+    entrypoint: /bin/sh
+    stdin_open: true
+    tty: true
+    volumes:
+    - ./Python/src/:/work
+    ports:
+    - 5003:5000
+
   java:
-    container_name: Java
+    container_name: java
     image: epigardenia/java:1.0.0
-    build: ./java
+    build: ./Java
+
   swift:
     container_name: swift
     image: epigardenia/swift:1.0.0
-    build: ./swift
+    build: ./Swift
+    working_dir: /work
+    entrypoint: /bin/sh
+    stdin_open: true
+    tty: true
+    volumes:
+    - ./Swift/src/:/work
+    ports:
+    - 5002:5000
