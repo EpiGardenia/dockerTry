@@ -85,7 +85,14 @@ COPY --from=dev /<commonImageFolder>/ /<newImageFolder>
 ```
 to save some work.
 
+ 
+# Part 4 
 
+Create base, debug, and prod for different purpose
+
+ 
+# Part 5 Debugging
 
 # Credit
 [video](https://www.youtube.com/watch?v=wyjNpxLRmLg)
+
